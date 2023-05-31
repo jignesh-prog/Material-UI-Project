@@ -78,10 +78,10 @@ export  function Dashbord(props: Props) {
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
-        <Box sx={{marginRight:'25px', display: { xs: 'none', sm: 'block' } }}>
-              <Button onClick={() => navigate('Features')} color='inherit'>Features</Button>
-              <Button onClick={() => navigate('Contact')} color='inherit'>Contact</Button>
-              <Button onClick={() => navigate('Information')} color='inherit'>Information</Button>
+        <Box sx={{marginRight:'25px', display: { xs: 'none', sm: 'block' },justifyContent:'space-around',fontSize:'large'}}>
+              <Button sx={{justifyContent:'space-around'}} onClick={() => navigate('Features')} color='inherit'>Features</Button>
+              <Button sx={{justifyContent:'space-around'}} onClick={() => navigate('Registration')} color='inherit'>Registration</Button>
+              <Button sx={{justifyContent:'space-around'}} onClick={() => navigate('Information')} color='inherit'>Information</Button>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
