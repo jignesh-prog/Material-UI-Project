@@ -1,7 +1,19 @@
 .App {
   text-align: center;
 }
-
+.parent{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  width:100%;
+  height:auto;
+}
+.parent1 {
+  grid-column: 1 / 2;
+}
+.parent2 {
+  grid-column: 2 / 3;
+  height:auto;
+}
 .Datafetch{
   text-align: center;
   justify-content: center;

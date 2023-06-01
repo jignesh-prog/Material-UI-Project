@@ -14,15 +14,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip/Tooltip';
-import {Avatar,Menu,MenuItem}from '@mui/material';
-import { useNavigate} from 'react-router-dom';
+import { Avatar, Menu, MenuItem } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
 
 interface Props {
   /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
+  
    */
   window?: () => Window;
 }
@@ -32,13 +31,13 @@ const drawerWidth = 240;
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
-export  function Dashbord(props: Props) {
+export function Dashbord(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(true);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   const navigate = useNavigate();
-  
+
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -52,21 +51,21 @@ export  function Dashbord(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-       Kusol
+        Kusol
       </Typography>
       <Divider />
       <List>
-          <ListItem sx={{display:'block',textAlign:'center'}}>
-              <ListItemButton sx={{textAlign:'center'}} onClick={() => navigate('Features')} color='inherit'>
-                 <ListItemText primary='Features' />
-              </ListItemButton>
-              <ListItemButton sx={{textAlign:'center'}}  onClick={() => navigate('Contact')} color='inherit'>
-                 <ListItemText primary="Contact" />
-             </ListItemButton>
-              <ListItemButton sx={{textAlign:'center'}} onClick={() => navigate('Information')} color='inherit'>
-                 <ListItemText primary="Information" />
-             </ListItemButton>
-          </ListItem>
+        <ListItem sx={{ display: 'block', textAlign: 'center' }}>
+          <ListItemButton sx={{ textAlign: 'center' }} onClick={() => navigate('Features')} color='inherit'>
+            <ListItemText primary='Features' />
+          </ListItemButton>
+          <ListItemButton sx={{ textAlign: 'center' }} onClick={() => navigate('Registration')} color='inherit'>
+            <ListItemText primary="Registration" />
+          </ListItemButton>
+          <ListItemButton sx={{ textAlign: 'center' }} onClick={() => navigate('Information')} color='inherit'>
+            <ListItemText primary="Information" />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
@@ -74,14 +73,14 @@ export  function Dashbord(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{marginRight:'75px', display: 'flex' }}>
+    <Box sx={{ marginRight: '75px', display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
-        <Box sx={{marginRight:'25px', display: { xs: 'none', sm: 'block' },justifyContent:'space-around',fontSize:'large'}}>
-              <Button sx={{justifyContent:'space-around'}} onClick={() => navigate('Features')} color='inherit'>Features</Button>
-              <Button sx={{justifyContent:'space-around'}} onClick={() => navigate('Registration')} color='inherit'>Registration</Button>
-              <Button sx={{justifyContent:'space-around'}} onClick={() => navigate('Information')} color='inherit'>Information</Button>
+          <Box sx={{ marginRight: '25px', display: { xs: 'none', sm: 'block' }, justifyContent: 'space-around', fontSize: 'large' }}>
+            <Button sx={{ justifyContent: 'space-around' }} onClick={() => navigate('Features')} color='inherit'>Features</Button>
+            <Button sx={{ justifyContent: 'space-around' }} onClick={() => navigate('Registration')} color='inherit'>Registration</Button>
+            <Button sx={{ justifyContent: 'space-around' }} onClick={() => navigate('Information')} color='inherit'>Information</Button>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
@@ -109,10 +108,13 @@ export  function Dashbord(props: Props) {
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ))}
+
+              )
+
+              )}
             </Menu>
           </Box>
-       
+
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -125,11 +127,11 @@ export  function Dashbord(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{marginRight:'200px', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ marginRight: '200px', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             Kusol
           </Typography>
-          </Toolbar>
+        </Toolbar>
       </AppBar>
       <Box component="nav">
         <Drawer
@@ -150,13 +152,13 @@ export  function Dashbord(props: Props) {
       </Box>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <Outlet/>
+        <Outlet />
       </Box>
     </Box>
   );
 }
 
-export default  Dashbord
+export default Dashbord
 
 
 
@@ -164,4 +166,3 @@ export default  Dashbord
 
 
 
-          

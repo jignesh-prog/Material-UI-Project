@@ -1,23 +1,25 @@
 import {
   Box, Button, Checkbox,
-  Container, FormControlLabel,
+  FormControlLabel,
   Paper, Stack, TextField,
-  Typography, InputAdornment
+  Typography, InputAdornment,
 } from '@mui/material'
+import { useNavigate } from 'react-router-dom';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 
 
 export const Registration = () => {
-  return (
-    <Container sx={{
-      height: 'fit-content', display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
+  const navigate = useNavigate();
+
+  return (<Box className='parent'>
+    <Box className='parent1' sx={{
+      height: 'fit-content',
+      alignItems: "center"
     }}>
-      <Paper sx={{ border: 'dark', margin: '0 20px', width: '100%' }}>
-        <Box sx={{ marginLeft: '30px', width: '50%' }}>
+      <Paper sx={{ border: 'dark', padding: '0 20px' }}>
+        <Box sx={{ paddingLeft: '30px' }}>
           <Box textAlign="left" sx={{ width: '100%', }}>
-            <Button variant="contained" size='small' sx={{ marginBottom: '40px', bgcolor: 'grey', display: 'absolute', left: '0', bottom: '0', colors: 'black', fontSize: '10px' }}>
+            <Button onClick={() => navigate(-1)} variant="contained" size='small' sx={{ marginBottom: '40px', bgcolor: 'grey', display: 'absolute', left: '0', bottom: '0', colors: 'black', fontSize: '10px' }}>
               <InputAdornment position='start'>{<ArrowLeftIcon />}</InputAdornment>Back to webpage
             </Button>
           </Box>
@@ -154,7 +156,9 @@ export const Registration = () => {
           </Stack>
         </Box>
       </Paper>
-    </Container>
+    </Box>
+    <Box className='parent2' >helloooooooooo</Box>
+  </Box>
   )
 }
 
