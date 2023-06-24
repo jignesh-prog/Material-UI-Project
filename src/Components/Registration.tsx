@@ -2,27 +2,34 @@ import {
   Box, Button, Checkbox,
   FormControlLabel,
   Paper, Stack, TextField,
-  Typography, 
+  Typography,
 } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
-import Calender from './Calender';
-
+import { Calender } from './Calender';
+import { Time } from './Time'
 export const Registration = () => {
   const navigate = useNavigate();
 
-  return (<Box className='parent'>
+  return (<Box className='parent' sx={{ gridTemplateColumns: { xs: '1fr', sm: '2fr 1fr', md: '2fr 1fr' } }}>
     <Box className='parent1' sx={{
       height: 'fit-content',
-      alignItems: "center"
+      alignItems: "center",
+
     }}>
-      <Paper sx={{ border: 'dark', padding: '0 20px' }}>
-        <Box sx={{ paddingLeft: '30px' }}>
-          <Box textAlign="left" sx={{ width: '100%', }}>
-            <Button onClick={() => navigate(-1)} startIcon={<ArrowLeftIcon/>} variant="contained" size='small' sx={{ marginBottom: '40px', bgcolor: 'grey', display: 'absolute', left: '0', bottom: '0', colors: 'black', fontSize: '10px' }}>
-             Back to webpage
-            </Button>
-          </Box>
+      <Box textAlign="left" sx={{ width: '100%', fontSize: { sm: "small" } }}>
+        <Button onClick={() => navigate(-1)} startIcon={<ArrowLeftIcon />} variant="contained" size='small'
+          sx={{
+            marginBottom: '40px', bgcolor: 'grey', display: 'absolute', left: '0',
+            bottom: '0', colors: 'black', fontSize: '10px'
+          }}>
+          Back to webpage
+        </Button>
+      </Box>
+      <Paper sx={{ border: 'dark' }}>
+        <Box sx={{ paddingLeft: '10px', paddingRight: '10px' }}>
+
+
           <Stack sx={{ spacing: '2' }}>
             <Typography variant='h6' sx={{ textAlign: "left", fontWeight: '500px', marginBottom: '15px' }}>
               Registration form for personal Consultancy
@@ -125,45 +132,48 @@ export const Registration = () => {
               5. Acknowledgement
             </Typography>
           </Stack>
-          <Stack direction='row' spacing={2} sx={{ padding: '25px 0' }}>
-            <FormControlLabel control={<Checkbox />} label='' sx={{ marginBottom: "90px" }} />
-            <Typography variant='subtitle2' color="error" sx={{ textAlign: 'left', padding: '25px 0' }}>
+          <Stack direction='row' spacing={2} sx={{ padding: '5px 0' }}>
+            <FormControlLabel control={<Checkbox />} label='' sx={{}} />
+            <Typography variant='subtitle2' color="error" sx={{ textAlign: 'left', padding: '5px 0' }}>
               The service provided to you is with the best intention to aid your health and well-being.Your consultation or session,
               depending on the services you have chosen,well be with doctor,health professional,health or lifystyle coach,health
               facilitator or a knowledgeale practitioner. Hence the consultacy may or may not have an academic or medical background
               but experience in the related field.
             </Typography>
           </Stack>
-          <Stack direction='row' spacing={2} sx={{ padding: '25px 0' }}>
-            <FormControlLabel control={<Checkbox />} label='' sx={{ marginBottom: "90px" }} />
-            <Typography variant='subtitle2' color="error" sx={{ textAlign: 'left', padding: '25px 0' }}>
+          <Stack direction='row' spacing={2} >
+            <FormControlLabel control={<Checkbox />} label='' sx={{}} />
+            <Typography variant='subtitle2' color="error" sx={{ textAlign: 'left', padding: '5px 0' }}>
               I confirm the details I give are true and correct. I have discussed my true identity and the tru purpose of my consultation
               and I am acting in my capicity as a private citizen. I realise that if I give false information before or during this consultation
               then no information from before or during this consultation can be used in any way. I understand that my doctor/health professional/health
               facilitator will kepp the contents of my consulation confidential and that I agree to do the same.
             </Typography>
           </Stack>
-          <Stack direction='row' spacing={2} sx={{ padding: '25px 0' }}>
-            <FormControlLabel control={<Checkbox />} label='' sx={{ marginBottom: "90px" }} />
-            <Typography variant='subtitle2' color="error" sx={{ textAlign: 'left', padding: '25px 0' }}>
+          <Stack direction='row' spacing={2} sx={{ padding: '5px 0' }}>
+            <FormControlLabel control={<Checkbox />} label='' sx={{}} />
+            <Typography variant='subtitle2' color="error" sx={{ textAlign: 'left', padding: '5px 0' }}>
               I have read and agree to the Right,Privacy & Consent commitments
             </Typography>
           </Stack>
-          <Stack direction='row' spacing={2} sx={{ justifyContent: 'space-between', padding: '20px 0', textAlign: 'center', borderRadius: ' 10PX' }} >
-            <Button sx={{padding: '10px', textAlign: 'center', bgcolor: 'black', color: 'white' }}>Email  Request</Button>
+          <Stack direction='row' spacing={2} sx={{ padding: '20px 0', textAlign: 'center', borderRadius: ' 10PX' }} >
+            <Button sx={{ padding: '10px', textAlign: 'center', bgcolor: 'black', color: 'white' }}>Email  Request</Button>
             <Button sx={{ padding: '10px', textAlign: 'center', bgcolor: 'black', color: 'white' }}>Request to book</Button>
             <Button sx={{ padding: '10px', textAlign: 'center', bgcolor: 'black', color: 'white' }}>Request to Pay</Button>
           </Stack>
         </Box>
       </Paper>
     </Box>
-    <Box className='parent2' >
-      <Paper sx={{width:'auto',height:'auto'}}>
-        <Calender/>
-      </Paper>
+    <Box className='parent2' sx={{ paddingTop: { md: '60px' } }} >
+      <Box sx={{
+        width: { xs: '50%', md: '100%' }, height: 'auto', backgroundColor: 'grey',
+        padding: '10px', position: { xs: 'relative', md: 'relative' },
+        display:'grid',justifyItems:'center'
+      }}>
+        <Calender />
+        <Time />
     </Box>
   </Box>
-  )
-}
-
+  </Box>
+  )}
 export default Registration

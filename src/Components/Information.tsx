@@ -2,8 +2,8 @@ import {Table,TableCell,TableBody,TableContainer,TableRow,TableHead,Paper} from 
 
 export const Information = () => {
   return (
-    <TableContainer component= {Paper} sx={{maxWidth:'100%',height:'auto',margin:"20px auto"}}>
-     <Table stickyHeader >
+    <TableContainer component= {Paper} sx={{width:'100%',height:'auto',margin:"20px auto"}}>
+     <Table stickyHeader sx={{width:'100%'}}>
       <TableHead > 
         <TableRow >
           <TableCell>Id</TableCell>

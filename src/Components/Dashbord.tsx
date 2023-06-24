@@ -84,7 +84,7 @@ export function Dashbord(props: Props) {
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton onClick={handleOpenUserMenu} >
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
@@ -127,7 +127,7 @@ export function Dashbord(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ marginRight: '200px', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ position:'absolute',right:"70px",top:'15px',flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             Kusol
           </Typography>
